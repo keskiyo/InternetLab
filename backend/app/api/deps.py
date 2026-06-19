@@ -1,0 +1,6 @@
+"""Shared API dependencies (re-exports for convenience)."""
+from __future__ import annotations
+
+from app.db.session import get_session
+
+__all__ = ["get_session"]

@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Semantic theme tokens — light + dark, slate-based with emerald accent. */
+@layer base {
+  :root {
+    --bg: 248 250 252; /* slate-50 */
+    --surface: 255 255 255;
+    --surface-muted: 241 245 249; /* slate-100 */
+    --fg: 15 23 42; /* slate-900 */
+    --fg-muted: 71 85 105; /* slate-600 */
+    --border: 226 232 240; /* slate-200 */
+    --ring: 34 197 94; /* emerald-500 */
+  }
+
+  .dark {
+    --bg: 15 23 42; /* slate-900 */
+    --surface: 30 41 59; /* slate-800 */
+    --surface-muted: 39 47 66;
+    --fg: 248 250 252; /* slate-50 */
+    --fg-muted: 148 163 184; /* slate-400 */
+    --border: 51 65 85; /* slate-700 */
+    --ring: 34 197 94;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: rgb(var(--bg));
+    color: rgb(var(--fg));
+    font-family: '"Space Grotesk"', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Semantic surface helpers backed by CSS variables. */
+  .bg-app {
+    background-color: rgb(var(--bg));
+  }
+  .bg-surface {
+    background-color: rgb(var(--surface));
+  }
+  .bg-surface-muted {
+    background-color: rgb(var(--surface-muted));
+  }
+  .text-fg {
+    color: rgb(var(--fg));
+  }
+  .text-fg-muted {
+    color: rgb(var(--fg-muted));
+  }
+  .border-app {
+    border-color: rgb(var(--border));
+  }
+}
