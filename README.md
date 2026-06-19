@@ -1,6 +1,6 @@
 <div align="center">
 
-# Lab Internet
+# InternetLab
 
 ### Landing с AI-анализом заявок
 
